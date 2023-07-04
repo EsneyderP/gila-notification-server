@@ -19,7 +19,7 @@ app.use(cookieParser());
 // Allow all origins to access the API
 // TODO: (replace with specific origin(s) in production)
 app.use(cors());
-app.use(process.env.API_VERSION_PREFIX, routes);
+app.use(process.env.API_VERSION_PREFIX || '/api/v1', routes);
 
 /**
  * Arena configuration for queues UI

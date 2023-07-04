@@ -22,6 +22,11 @@ app.set('port', port);
  */
 const server = http.createServer(app);
 
+if (!process.env.MONGODB_URI) {
+  console.log("Please make sure you have created the .env file with the required envvars :)");
+  process.exit(1);
+}
+
 /**
  * Init Mongodb connection
  */
