@@ -17,9 +17,9 @@ const ChannelSchema = require('../../models/channel');
  */
 router.post('/', async function(req, res) {
   try {
-    const { worker, name } = req.body;
-    if (!name || !worker) {
-      return res.status(400).json({ error: 'worker, or name is missing in the request.' });
+    const { processor, name } = req.body;
+    if (!name || !processor) {
+      return res.status(400).json({ error: 'processor, or name is missing in the request.' });
     }
     
     const channel = new ChannelSchema(req.body);
